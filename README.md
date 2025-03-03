@@ -7,3 +7,8 @@
 時空崩壊に抗うある主人公の物語
 
 詳細：[自作ゲーム案[ChronosFall]](https://www.notion.so/medakoro/ChronosFall-14f967ff2e1f80458e1bc487940a539a#14f967ff2e1f80a69aaed90d26cf5450)
+
+---
+
+開発タイムライン
+![ChronosFall GameDev Timeline drawio](https://github.com/user-attachments/assets/26299f6a-7db3-4ee5-8db6-75fa65de30b9)
