@@ -12,4 +12,3 @@
 
 開発タイムライン
 ![ChronosFall GameDev Timeline drawio](https://github.com/user-attachments/assets/26299f6a-7db3-4ee5-8db6-75fa65de30b9)
-
