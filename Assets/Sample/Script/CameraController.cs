@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [SerializeField] GameObject player;
+    [SerializeField] GameObject gameobject;
 
     Vector3 currentPos;//現在のカメラ位置
     Vector3 pastPos;//過去のカメラ位置
@@ -14,14 +14,14 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         //最初のプレイヤーの位置の取得
-        pastPos = player.transform.position;
+        pastPos = gameobject.transform.position;
     }
     void Update()
     {
         //------カメラの移動------
 
         //プレイヤーの現在地の取得
-        currentPos = player.transform.position;
+        currentPos = gameobject.transform.position;
 
         diff = currentPos - pastPos;
 
@@ -40,14 +40,14 @@ public class CameraController : MonoBehaviour
         if (Mathf.Abs(mx) > 0.01f)
         {
             // 回転軸はワールド座標のY軸
-            transform.RotateAround(player.transform.position, Vector3.up, mx);
+            transform.RotateAround(gameobject.transform.position, Vector3.up, mx);
         }
 
         // Y方向に一定量移動していれば縦回転
         if (Mathf.Abs(my) > 0.01f)
         {
             // 回転軸はカメラ自身のX軸
-            transform.RotateAround(player.transform.position, transform.right, -my);
+            transform.RotateAround(gameobject.transform.position, transform.right, -my);
         }
     }
 }
