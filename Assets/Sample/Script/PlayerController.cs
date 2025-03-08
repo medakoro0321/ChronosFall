@@ -59,6 +59,7 @@ public class PlayerController : MonoBehaviour
         //Moveメソッドで、力加えてもらう
         Move();
 
+
         //------プレイヤーの回転------
         //現在の位置
         currentPos = transform.position;
@@ -70,16 +71,15 @@ public class PlayerController : MonoBehaviour
         //過去の位置の更新
         pastPos = currentPos;
 
-        // もし静止していたら、カメラの向きに揃える
-        if (delta == Vector3.zero)
-        {
-            transform.rotation = Quaternion.LookRotation(Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)), Vector3.up);
-            return;
-        }
 
+        // もし静止していたら、カメラの向きに揃える
+        if (delta == Vector3.zero) {
+        transform.rotation = Quaternion.LookRotation(Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)), Vector3.up);
+        return;
+        }
         // 移動しているときは、移動方向を向く
-        Quaternion targetRotation = Quaternion.LookRotation(moveSpeed);
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
+        /*Quaternion targetRotation = Quaternion.LookRotation(moveSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);*/
     }
 
 
