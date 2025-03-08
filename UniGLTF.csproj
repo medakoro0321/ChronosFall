@@ -94,8 +94,8 @@
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\GltfData.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\TextureIO\Export\TextureExportTypes.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\RuntimeGltfInstance.cs" />
-    <Compile Include="Assets\UniGLTF\Runtime\Extensions\TransformExtensions.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniJSON\Utf8String\IUtf8String.cs" />
+    <Compile Include="Assets\UniGLTF\Runtime\Extensions\TransformExtensions.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\MaterialIO\BuiltInRP\Export\Materials\BuiltInFallbackMaterialExporter.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\SByte4.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniJSON\Extensions\ByteExtensions.cs" />
@@ -197,8 +197,8 @@
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\UShort4.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\MaterialIO\URP\Export\Materials\UrpUniUnlitMaterialExporter.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\Parser\ZipArchivedGltfFileParser.cs" />
-    <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\MaterialIO\URP\Export\UrpGltfMaterialExporter.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\Format\ExtensionsAndExtras\gltfExtension.cs" />
+    <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\MaterialIO\URP\Export\UrpGltfMaterialExporter.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\ExtensionSupportFlags.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\MaterialIO\URP\ShaderUtil\Lit\UrpLitWorkflowType.cs" />
     <Compile Include="Assets\UniGLTF\Runtime\UniGLTF\IO\MaterialIO\Utils\InternalMaterialUtils.cs" />

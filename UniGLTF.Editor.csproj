@@ -134,8 +134,8 @@
     <Compile Include="Assets\UniGLTF\Editor\UniGLTF\ScriptedImporter\GltfScriptedImporterBase.cs" />
     <Compile Include="Assets\UniGLTF\Editor\UniGLTF\ScriptedImporter\RemapEditorBase.cs" />
     <Compile Include="Assets\UniGLTF\Editor\TestRunner\TestRunner.cs" />
-    <Compile Include="Assets\UniGLTF\Editor\UniGLTF\Serialization\CollectionSerializationBase.cs" />
     <Compile Include="Assets\UniGLTF\Editor\JsonSchema\Schemas\PrimitiveJsonSchema.cs" />
+    <Compile Include="Assets\UniGLTF\Editor\UniGLTF\Serialization\CollectionSerializationBase.cs" />
     <Compile Include="Assets\UniGLTF\Editor\Animation\EditorAnimationExporter.cs" />
     <Compile Include="Assets\UniGLTF\Editor\JsonSchema\Schemas\ArrayJsonSchema.cs" />
     <Compile Include="Assets\UniGLTF\Editor\UniGLTF\ExportDialog\MaterialValidator.cs" />

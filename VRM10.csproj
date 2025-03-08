@@ -91,8 +91,8 @@
     <Compile Include="Assets\VRM10\Runtime\Migration\MigrationVector3.cs" />
     <Compile Include="Assets\VRM10\Runtime\Migration\MigrationCheck.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\VRM10Object\VRM10ObjectMeta.cs" />
-    <Compile Include="Assets\VRM10\Runtime\Components\Expression\ExpressionKey.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\Expression\ExpressionMerger.cs" />
+    <Compile Include="Assets\VRM10\Runtime\Components\Expression\ExpressionKey.cs" />
     <Compile Include="Assets\VRM10\Runtime\IO\Material\Vrm10MaterialExportUtils.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\SpringBone\VRM10SpringBoneColliderGroup.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\Constraint\ConstRaintException.cs" />
@@ -111,8 +111,8 @@
     <Compile Include="Assets\VRM10\Runtime\Format\Vrm\Format.g.cs" />
     <Compile Include="Assets\VRM10\Runtime\Migration\Vrm0XVersion.cs" />
     <Compile Include="Assets\VRM10\Runtime\ControlRig\AnimatorPoseProvider.cs" />
-    <Compile Include="Assets\VRM10\Runtime\Format\SpringBone\Format.g.cs" />
     <Compile Include="Assets\VRM10\Runtime\Scenes\Sample.cs" />
+    <Compile Include="Assets\VRM10\Runtime\Format\SpringBone\Format.g.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\VrmAnimationInstance\Vrm10TPose.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\Expression\ExpressionPreset.cs" />
     <Compile Include="Assets\VRM10\Runtime\Format\MaterialsMToon\Deserializer.g.cs" />
@@ -153,8 +153,8 @@
     <Compile Include="Assets\VRM10\Runtime\Components\Vrm10Runtime\Vrm10RuntimeExpression.cs" />
     <Compile Include="Assets\VRM10\Runtime\IO\Material\BuiltInRP\Export\BuiltInVrm10MaterialExporter.cs" />
     <Compile Include="Assets\VRM10\Runtime\AssemblyInfo.cs" />
-    <Compile Include="Assets\VRM10\Runtime\MeshUtility\Vrm10MeshUtility.cs" />
     <Compile Include="Assets\VRM10\Runtime\Format\Constraints\Deserializer.g.cs" />
+    <Compile Include="Assets\VRM10\Runtime\MeshUtility\Vrm10MeshUtility.cs" />
     <Compile Include="Assets\VRM10\Runtime\Format\Animation\Deserializer.g.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\Vrm10Runtime\ControlRig\Vrm10ControlBone.cs" />
     <Compile Include="Assets\VRM10\Runtime\Format\MaterialsMToon\Serializer.g.cs" />
@@ -198,8 +198,8 @@
     <Compile Include="Assets\VRM10\Runtime\IO\Material\BuiltInRP\Import\Materials\BuiltInVrm10MToonMaterialImporter.cs" />
     <Compile Include="Assets\VRM10\Runtime\IO\VrmAnimationUtil.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\Vrm10Runtime\Vrm10FastSpringboneRuntime.cs" />
-    <Compile Include="Assets\VRM10\Runtime\Components\Vrm10Instance\Vrm10Instance.cs" />
     <Compile Include="Assets\VRM10\Runtime\IO\Material\BuiltInRP\Export\Materials\BuiltInVrm10MToonMaterialExporter.cs" />
+    <Compile Include="Assets\VRM10\Runtime\Components\Vrm10Instance\Vrm10Instance.cs" />
     <Compile Include="Assets\VRM10\Runtime\Format\SpringBoneExtendedCollider\Deserializer.g.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\Expression\ILookAtEyeDirectionApplicable.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\SpringBone\VRM10SpringUtility.cs" />
@@ -227,8 +227,8 @@
     <Compile Include="Assets\VRM10\Runtime\Components\VRM10Object\VRM10ObjectFirstPerson.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\Vrm10Runtime\Vrm10FastSpringboneRuntimeProvider.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\VrmAnimationInstance\Vrm10AnimationInstance.cs" />
-    <Compile Include="Assets\VRM10\Runtime\IO\UnityExtension.cs" />
     <Compile Include="Assets\VRM10\Runtime\Components\Expression\MaterialUVBinding.cs" />
+    <Compile Include="Assets\VRM10\Runtime\IO\UnityExtension.cs" />
     <Compile Include="Assets\VRM10\Runtime\IO\Material\BuiltInRP\Import\BuiltInVrm10MaterialDescriptorGenerator.cs" />
     <Compile Include="Assets\VRM10\Runtime\Migration\Vrm0Meta.cs" />
     <Compile Include="Assets\VRM10\Runtime\IO\Vrm10Exception.cs" />
