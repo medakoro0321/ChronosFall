@@ -43,47 +43,23 @@ public class PlayerController : MonoBehaviour
     {
         //------プレイヤーの移動------
 
-        //カメラに対して前を取得
+        //カメラに対して前と右を取得
         Vector3 cameraForward = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
-        //カメラに対して右を取得
         Vector3 cameraRight = Vector3.Scale(Camera.main.transform.right, new Vector3(1, 0, 1)).normalized;
 
         //moveVelocityを0で初期化する
         moveSpeed = Vector3.zero;
 
-        //移動入力
-        if (Input.GetKey(KeyCode.W))
-        {
-            moveSpeed = moveSpeedIn * cameraForward;
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveSpeed = -moveSpeedIn * cameraRight;
-        }
-
-        if (Input.GetKey(KeyCode.S))
-        {
-            moveSpeed = -moveSpeedIn * cameraForward;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            moveSpeed = moveSpeedIn * cameraRight;
-        }
+        //移動入力の省略形
+        if (Input.GetKey(KeyCode.W)) moveSpeed += moveSpeedIn * cameraForward;
+        if (Input.GetKey(KeyCode.A)) moveSpeed -= moveSpeedIn * cameraRight;
+        if (Input.GetKey(KeyCode.S)) moveSpeed -= moveSpeedIn * cameraForward;
+        if (Input.GetKey(KeyCode.D)) moveSpeed += moveSpeedIn * cameraRight;
 
         //Moveメソッドで、力加えてもらう
         Move();
 
-        //慣性を消す
-        if(Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.D))
-        {
-            //playerRb.velocity = Vector3.zero;
-           // playerRb.angularVelocity = Vector3.zero;
-        }
-
         //------プレイヤーの回転------
-
         //現在の位置
         currentPos = transform.position;
 
@@ -94,22 +70,18 @@ public class PlayerController : MonoBehaviour
         //過去の位置の更新
         pastPos = currentPos;
 
+        // もし静止していたら、カメラの向きに揃える
         if (delta == Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)), Vector3.up);
             return;
+        }
 
-        playerRot = Quaternion.LookRotation(delta, Vector3.up);
-
-        diffAngle = Vector3.Angle(transform.forward, delta);
-
-        //Vector3.SmoothDampはVector3型の値を徐々に変化させる
-        //Vector3.SmoothDamp (現在地, 目的地, ref 現在の速度, 遷移時間, 最高速度);
-        rotAngle = Mathf.SmoothDampAngle(0, diffAngle, ref currentAngularVelocity, smoothTime, maxAngularVelocity);
-
-        nextRot = Quaternion.RotateTowards(transform.rotation, playerRot, rotAngle);
-
-        transform.rotation = nextRot;
-
+        // 移動しているときは、移動方向を向く
+        Quaternion targetRotation = Quaternion.LookRotation(moveSpeed);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
     }
+
 
     /// <summary>
     /// 移動方向に力を加える
