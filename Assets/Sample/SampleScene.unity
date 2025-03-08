@@ -533,6 +533,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76e11f797117cf408d00f523657c429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraObject: {fileID: 0}
+  CameraCurrRotate_Y: 0
+  moveSpeedIn: 0
+  moveSpeed: {x: 0, y: 0, z: 0}
+  playerRb: {fileID: 0}
 --- !u!1001 &1539546027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -696,6 +701,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76e11f797117cf408d00f523657c429, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CameraObject: {fileID: 246703062}
+  CameraCurrRotate_Y: 0
+  moveSpeedIn: 0
+  moveSpeed: {x: 0, y: 0, z: 0}
+  playerRb: {fileID: 0}
 --- !u!54 &1539546030
 Rigidbody:
   m_ObjectHideFlags: 0
