@@ -682,7 +682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeedIn: 20
   maxAngularVelocity: Infinity
-  smoothTime: 0.1
+  smoothTime: 0.05
 --- !u!54 &1539546030
 Rigidbody:
   m_ObjectHideFlags: 0
