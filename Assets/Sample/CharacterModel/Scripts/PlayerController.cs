@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float CameraCurrRotate_Y;
     //===プレイヤー移動速度系統===
-    public float SetMoveSpeed;//プレイヤーの移動速度入力
+    public float SetMoveSpeed = 5f;//プレイヤーの移動速度入力
     public float MoveCurrSpeed;//プレイヤーの移動速度を保存
     public Vector3 moveSpeed;//プレイヤーの座標軸移動速度
     public Rigidbody playerRb;//プレイヤーのRigidbody
