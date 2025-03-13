@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     //===プレイヤー移動速度系統===
     public float SetMoveSpeed;//プレイヤーの移動速度入力
     public float MoveCurrSpeed;//プレイヤーの移動速度を保存
-    //public float moveDashSpeed;//プレイヤーのダッシュ速度を入力
     public Vector3 moveSpeed;//プレイヤーの座標軸移動速度
     public Rigidbody playerRb;//プレイヤーのRigidbody
 
