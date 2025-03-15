@@ -400,7 +400,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1539546032}
-  moveSpeed: 3
+  MoveSpeed: 3
+  HP: 100
 --- !u!136 &446429088
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -608,6 +609,7 @@ MonoBehaviour:
   MoveCurrSpeed: 0
   MoveSpeed: {x: 0, y: 0, z: 0}
   playerRb: {fileID: 0}
+  HP: 100
 --- !u!1001 &1539546027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -642,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1728013695380148634, guid: 5f378b145917cd941af5e09702272687, type: 3}
       propertyPath: m_Name
-      value: exmaple_character
+      value: example_character
       objectReference: {fileID: 0}
     - target: {fileID: 2953604236389334553, guid: 5f378b145917cd941af5e09702272687, type: 3}
       propertyPath: m_DirtyAABB
@@ -773,10 +775,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraObject: {fileID: 246703062}
   CameraCurrRotate_Y: 0
-  SetMoveSpeed: 0
+  SetMoveSpeed: 5
   MoveCurrSpeed: 0
   MoveSpeed: {x: 0, y: 0, z: 0}
   playerRb: {fileID: 0}
+  HP: 100
 --- !u!54 &1539546030
 Rigidbody:
   m_ObjectHideFlags: 0

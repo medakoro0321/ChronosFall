@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public Vector3 MoveSpeed;//プレイヤーの座標軸移動速度
     public Rigidbody playerRb;//プレイヤーのRigidbody
 
+    public float HP = 100f; //HP
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
@@ -79,6 +80,8 @@ public class PlayerController : MonoBehaviour
                 int MaxAttackDamage = (int)(50 - AttackDistance * 10);
                 int Damage = Random.Range(1, MaxAttackDamage);
                 Debug.Log("敵に" + Damage + "/" + MaxAttackDamage + "ダメージを与えた");
+                //敵のHPを減らす
+                model.GetComponent<EnemyWalkModel>().HP -= Damage;
             }
         }
     }
