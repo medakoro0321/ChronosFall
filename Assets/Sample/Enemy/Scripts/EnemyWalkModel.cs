@@ -9,6 +9,7 @@ public class EnemyWalkModel : MonoBehaviour
     private Rigidbody enemyRb;
     public float HP = 100f; //HP
     private bool isAttacking = false; // 攻撃中かどうかのフラグ
+    public Vector3 CurrSpeedAxis ; //敵の座標軸移動速度
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
@@ -24,7 +25,8 @@ public class EnemyWalkModel : MonoBehaviour
         direction.y = 0; // Y軸の変化をなくす（地面に沿って移動）
 
         // 移動
-        enemyRb.linearVelocity = direction * MoveSpeed;
+        CurrSpeedAxis = direction * MoveSpeed;
+        enemyRb.linearVelocity = new Vector3(CurrSpeedAxis.x, enemyRb.linearVelocity.y, CurrSpeedAxis.z);
 
         // プレイヤーの方向を向く
         transform.LookAt(new Vector3(target.position.x, transform.position.y, target.position.z));

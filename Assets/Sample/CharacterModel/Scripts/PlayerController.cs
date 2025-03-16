@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     //===プレイヤー移動速度系統===
     public float SetMoveSpeed = 5f;//プレイヤーの移動速度入力
     public float MoveCurrSpeed;//プレイヤーの移動速度を保存
-    public Vector3 MoveSpeed;//プレイヤーの座標軸移動速度
+    public Vector3 MoveSpeedAxis;//プレイヤーの座標軸移動速度
     public Rigidbody playerRb;//プレイヤーのRigidbody
 
     public float HP = 100f; //HP
@@ -38,13 +38,13 @@ public class PlayerController : MonoBehaviour
         Vector3 cameraRight = Vector3.Scale(CameraObject.transform.right, new Vector3(1, 0, 1)).normalized;
 
         //moveVelocityを0で初期化する
-        MoveSpeed = Vector3.zero;
+        MoveSpeedAxis = Vector3.zero;
 
         //移動入力の省略形
-        if (Input.GetKey(KeyCode.W)) MoveSpeed += MoveCurrSpeed * cameraForward;
-        if (Input.GetKey(KeyCode.A)) MoveSpeed -= MoveCurrSpeed * cameraRight;
-        if (Input.GetKey(KeyCode.S)) MoveSpeed -= MoveCurrSpeed * cameraForward;
-        if (Input.GetKey(KeyCode.D)) MoveSpeed += MoveCurrSpeed * cameraRight;
+        if (Input.GetKey(KeyCode.W)) MoveSpeedAxis += MoveCurrSpeed * cameraForward;
+        if (Input.GetKey(KeyCode.A)) MoveSpeedAxis -= MoveCurrSpeed * cameraRight;
+        if (Input.GetKey(KeyCode.S)) MoveSpeedAxis -= MoveCurrSpeed * cameraForward;
+        if (Input.GetKey(KeyCode.D)) MoveSpeedAxis += MoveCurrSpeed * cameraRight;
         //Rキーでダッシュ(Rキーを押している間移動速度を2倍に変更、してない場合通常に変更)
         if (Input.GetKey(KeyCode.R)) MoveCurrSpeed = SetMoveSpeed * 2; else MoveCurrSpeed = SetMoveSpeed;
         //攻撃
@@ -55,13 +55,15 @@ public class PlayerController : MonoBehaviour
         Move();
     }
     /// <summary>
-    /// 移動方向に力を加える
+    /// 移動方向に力を加える（重力対応）
     /// </summary>
     private void Move()
     {
-        //playerRb.AddForce(MoveSpeed, ForceMode.Force);
+        // **現在のY軸の速度を保存**
+        float CurrY = playerRb.linearVelocity.y;
 
-        playerRb.linearVelocity = MoveSpeed;
+        // **X/Z軸の移動速度を適用**
+        playerRb.linearVelocity = new Vector3(MoveSpeedAxis.x, CurrY, MoveSpeedAxis.z);
     }
     /// <summary>
     /// 左クリックするたびに呼び出し

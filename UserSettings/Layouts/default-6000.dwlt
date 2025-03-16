@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -408,7 +408,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 47372
+  m_LastSelectedObjectID: 46834
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -456,7 +456,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Sample/CharacterModel
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -466,15 +466,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Sample/CharacterModel
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\user\ChronosFall
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 90bf0000
-    m_LastClickedID: 49040
+    m_SelectedIDs: aac20000
+    m_LastClickedID: 49834
     m_ExpandedIDs: 0000000090bf0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -669,7 +669,7 @@ MonoBehaviour:
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
-        m_ClientGUIView: {fileID: 0}
+        m_ClientGUIView: {fileID: 4}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1242,9 +1242,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 30.488989, y: 0.44517127, z: 281.3511}
+    m_Target: {x: 33.240646, y: 1.9884543, z: 281.5395}
     speed: 2
-    m_Value: {x: 30.488989, y: 0.44517127, z: 281.3511}
+    m_Value: {x: 33.240646, y: 1.9884543, z: 281.5395}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 2
@@ -1294,9 +1294,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.036214087, y: 0.9595203, z: -0.14589891, w: 0.23816551}
   m_Size:
-    m_Target: 3.6870615
+    m_Target: 1.1719967
     speed: 2
-    m_Value: 3.6870615
+    m_Value: 1.1719967
   m_Ortho:
     m_Target: 0
     speed: 2
