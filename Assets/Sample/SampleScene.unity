@@ -402,6 +402,7 @@ MonoBehaviour:
   target: {fileID: 1539546032}
   MoveSpeed: 3
   HP: 100
+  CurrSpeedAxis: {x: 0, y: 0, z: 0}
 --- !u!136 &446429088
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -605,11 +606,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraObject: {fileID: 0}
   CameraCurrRotate_Y: 0
+  animator: {fileID: 0}
   SetMoveSpeed: 0
   MoveCurrSpeed: 0
-  MoveSpeed: {x: 0, y: 0, z: 0}
+  MoveSpeedAxis: {x: 0, y: 0, z: 0}
   playerRb: {fileID: 0}
+  TotalSpeedAxis: 0
   HP: 100
+--- !u!1 &1529640435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3006928552751935236, guid: 5f378b145917cd941af5e09702272687, type: 3}
+  m_PrefabInstance: {fileID: 1539546027}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1529640447
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529640435}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9099a000b4d0906479971dca200f2875, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1539546027
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -674,6 +704,10 @@ PrefabInstance:
       propertyPath: m_AABB.m_Extent.z
       value: 0.18864396
       objectReference: {fileID: 0}
+    - target: {fileID: 4870552773557632513, guid: 5f378b145917cd941af5e09702272687, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9099a000b4d0906479971dca200f2875, type: 2}
     - target: {fileID: 5159078012444724336, guid: 5f378b145917cd941af5e09702272687, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33.240646
@@ -755,6 +789,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -1728013695380148634, guid: 5f378b145917cd941af5e09702272687, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1539546029}
+    - targetCorrespondingSourceObject: {fileID: 3006928552751935236, guid: 5f378b145917cd941af5e09702272687, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1529640447}
   m_SourcePrefab: {fileID: -3956505258223990651, guid: 5f378b145917cd941af5e09702272687, type: 3}
 --- !u!1 &1539546028 stripped
 GameObject:
@@ -775,10 +812,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraObject: {fileID: 246703062}
   CameraCurrRotate_Y: 0
+  animator: {fileID: 0}
   SetMoveSpeed: 5
   MoveCurrSpeed: 0
-  MoveSpeed: {x: 0, y: 0, z: 0}
+  MoveSpeedAxis: {x: 0, y: 0, z: 0}
   playerRb: {fileID: 0}
+  TotalSpeedAxis: 0
   HP: 100
 --- !u!54 &1539546030
 Rigidbody:

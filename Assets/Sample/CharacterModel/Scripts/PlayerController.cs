@@ -1,27 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using System;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] public GameObject CameraObject;
 
     public float CameraCurrRotate_Y;
+    public Animator animator;// Animator コンポーネント
+
     //===プレイヤー移動速度系統===
     public float SetMoveSpeed = 5f;//プレイヤーの移動速度入力
     public float MoveCurrSpeed;//プレイヤーの移動速度を保存
     public Vector3 MoveSpeedAxis;//プレイヤーの座標軸移動速度
     public Rigidbody playerRb;//プレイヤーのRigidbody
 
+    [SerializeField] public float TotalSpeedAxis;//アニメーションに適用する移動速度
+
     public float HP = 100f; //HP
     void Start()
     {
+        // アニメーターコンポーネント取得
+        animator = GetComponent<Animator>();
+        //プレイヤーのRigidbodyを取得
         playerRb = GetComponent<Rigidbody>();
         //最初に代入
         MoveCurrSpeed = SetMoveSpeed;
+        // AnimatorControllerが設定されているか確認
+        if (animator.runtimeAnimatorController == null)
+        {
+            Debug.LogError("AnimatorControllerが設定されていません");
+        }
     }
 
     void Update()
@@ -59,11 +72,40 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Move()
     {
-        // **現在のY軸の速度を保存**
+        // 現在のY軸の速度を保存
         float CurrY = playerRb.linearVelocity.y;
 
-        // **X/Z軸の移動速度を適用**
+        // X/Z軸の移動速度を適用
         playerRb.linearVelocity = new Vector3(MoveSpeedAxis.x, CurrY, MoveSpeedAxis.z);
+
+        // アニメーション用のパラメータ計算
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            float moveAmount = MoveSpeedAxis.magnitude;
+
+            // 動きがある場合（閾値を小さくして感度を上げる）
+            if (moveAmount > 0.01f)
+            {
+                // キャラクターの向きに対する相対的な移動方向を計算
+                Vector3 localMovement = transform.InverseTransformDirection(MoveSpeedAxis.normalized);
+
+                // BlendTreeに渡すパラメータ値を計算 - 正規化された値を使用
+                animator.SetFloat("speed_x", localMovement.x);
+                animator.SetFloat("speed_z", localMovement.z);
+
+                // 移動速度に基づいてアニメーション速度も設定（オプション）
+                animator.speed = moveAmount / SetMoveSpeed;
+
+                Debug.Log($"speed_x: {localMovement.x}, speed_z: {localMovement.z}, moveAmount: {moveAmount}");
+            }
+            else
+            {
+                // 動いていない場合は0を設定し、アニメーションを停止させない
+                animator.SetFloat("speed_x", 0);
+                animator.SetFloat("speed_z", 0);
+                animator.speed = 1.0f;  // アニメーション速度を通常に戻す
+            }
+        }
     }
     /// <summary>
     /// 左クリックするたびに呼び出し
@@ -80,7 +122,7 @@ public class PlayerController : MonoBehaviour
             {
                 //50-攻撃距離*10の範囲でダメージを与える
                 int MaxAttackDamage = (int)(50 - AttackDistance * 10);
-                int Damage = Random.Range(1, MaxAttackDamage);
+                int Damage = UnityEngine.Random.Range(1, MaxAttackDamage);
                 Debug.Log("敵に" + Damage + "/" + MaxAttackDamage + "ダメージを与えた");
                 //敵のHPを減らす
                 model.GetComponent<EnemyWalkModel>().HP -= Damage;
