@@ -77,7 +77,6 @@ public class PlayerController : MonoBehaviour
 
         // X/Z軸の移動速度を適用
         playerRb.linearVelocity = new Vector3(MoveSpeedAxis.x, CurrY, MoveSpeedAxis.z);
-
         // アニメーション用のパラメータ計算
         if (animator != null && animator.runtimeAnimatorController != null)
         {
@@ -86,23 +85,22 @@ public class PlayerController : MonoBehaviour
             // 動きがある場合（閾値を小さくして感度を上げる）
             if (moveAmount > 0.01f)
             {
-                // キャラクターの向きに対する相対的な移動方向を計算
-                Vector3 localMovement = transform.InverseTransformDirection(MoveSpeedAxis.normalized);
-
-                // BlendTreeに渡すパラメータ値を計算 - 正規化された値を使用
-                animator.SetFloat("speed_x", localMovement.x);
-                animator.SetFloat("speed_z", localMovement.z);
-
-                // 移動速度に基づいてアニメーション速度も設定（オプション）
-                animator.speed = moveAmount / SetMoveSpeed;
-
-                Debug.Log($"speed_x: {localMovement.x}, speed_z: {localMovement.z}, moveAmount: {moveAmount}");
+                // アニメーション速度を計算
+                float Animation_Speed = 1f;
+                // スケーリング
+                if (MoveCurrSpeed > SetMoveSpeed)
+                {
+                    Animation_Speed = 2f;
+                }
+                // BlendTreeに渡すパラメータ値を設定
+                animator.SetFloat("Speed_Zero", 0);
+                animator.SetFloat("Animation_Speed", Animation_Speed);
             }
             else
             {
                 // 動いていない場合は0を設定し、アニメーションを停止させない
-                animator.SetFloat("speed_x", 0);
-                animator.SetFloat("speed_z", 0);
+                animator.SetFloat("Speed_Zero", 0);
+                animator.SetFloat("Animation_Speed", 0);
                 animator.speed = 1.0f;  // アニメーション速度を通常に戻す
             }
         }
