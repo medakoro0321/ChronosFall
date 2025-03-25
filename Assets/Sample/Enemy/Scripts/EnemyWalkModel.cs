@@ -34,6 +34,8 @@ public class EnemyWalkModel : MonoBehaviour
         // HPが0以下になったら消滅
         if (HP <= 0)
         {
+            //将来的に、ラグドールを導入予定
+            //https://github.com/medakoro0321/ChronosFall/issues/14 [#14]
             Destroy(gameObject);
         }
 

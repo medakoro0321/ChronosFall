@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public float TotalSpeedAxis;//アニメーションに適用する移動速度
 
-    public float HP = 100f; //HP
+    public int HP = 100; //HP
     void Start()
     {
         // アニメーターコンポーネント取得
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.S)) MoveSpeedAxis -= MoveCurrSpeed * cameraForward;
         if (Input.GetKey(KeyCode.D)) MoveSpeedAxis += MoveCurrSpeed * cameraRight;
         //Rキーでダッシュ(Rキーを押している間移動速度を2倍に変更、してない場合通常に変更)
-        if (Input.GetKey(KeyCode.R)) MoveCurrSpeed = SetMoveSpeed * 2; else MoveCurrSpeed = SetMoveSpeed;
+        if (Input.GetKey(KeyCode.LeftControl)) MoveCurrSpeed = SetMoveSpeed * 2; else MoveCurrSpeed = SetMoveSpeed;
         //攻撃
         //左クリック(値:0)するたびに攻撃
         if (Input.GetMouseButtonDown(0)) Attack();
