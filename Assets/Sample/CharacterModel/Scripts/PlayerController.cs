@@ -5,6 +5,8 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,7 +23,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public float TotalSpeedAxis;//アニメーションに適用する移動速度
 
-    public int HP = 100; //HP
+    public int HP = 100; //初期設定HP
+    public Slider HPbarSlider; //HPバー
+
     void Start()
     {
         // アニメーターコンポーネント取得
@@ -35,6 +39,10 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("AnimatorControllerが設定されていません");
         }
+        //HPバーを取得
+        HPbarSlider = GameObject.Find("HPbar").GetComponent<Slider>();
+        //初期設定HPを最大に変更
+        HPbarSlider.maxValue = HP;
     }
 
     void Update()
@@ -66,6 +74,18 @@ public class PlayerController : MonoBehaviour
 
         //Moveメソッドで、力加えてもらう
         Move();
+
+        //------HP------
+        //UIのHPバーにHPを反映
+        HPbarSlider.value = HP;
+        //もしHPが0以下になったら
+        if (HP <= 0)
+        {
+            //試験的にラグドールを実装予定
+            //https://github.com/medakoro0321/ChronosFall/issues/14 [#14]
+            //プレイヤーを消す
+            Destroy(gameObject);
+        }
     }
     /// <summary>
     /// 移動方向に力を加える（重力対応）
