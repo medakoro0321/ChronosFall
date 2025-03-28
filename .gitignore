@@ -2,3 +2,7 @@
 /Library
 /Logs
 /Temp
+*.csproj
+/Assets/UniGLTF
+/Assets/VRM10
+/Packages/jp.lilxyzw.liltoon
