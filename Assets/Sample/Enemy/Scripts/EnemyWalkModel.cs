@@ -6,14 +6,15 @@ public class EnemyWalkModel : MonoBehaviour
 {
     public Transform target; // プレイヤーのTransform
     public float MoveSpeed = 3f; // 速度
-    private Rigidbody enemyRb;
+    public Rigidbody enemyRb;
     public float HP = 100f; //HP
-    private bool isAttacking = false; // 攻撃中かどうかのフラグ
+    public bool isAttacking = false; // 攻撃中かどうかのフラグ
     public Vector3 CurrSpeedAxis ; //敵の座標軸移動速度
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
         HP = Random.Range(50, 200);
+        target = GameObject.Find("example_character").transform;
     }
 
     void Update()

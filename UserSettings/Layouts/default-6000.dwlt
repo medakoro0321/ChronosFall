@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 101
+  controlID: 40
   draggingID: 0
 --- !u!114 &3
 MonoBehaviour:
@@ -410,7 +410,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 46708
+  m_LastSelectedObjectID: -2386
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -448,7 +448,7 @@ MonoBehaviour:
     m_ContainerData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: lilToon
+    m_NameFilter: 
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -456,28 +456,28 @@ MonoBehaviour:
     m_SceneHandles: 
     m_ShowAllHits: 0
     m_SkipHidden: 0
-    m_SearchArea: 0
+    m_SearchArea: 1
     m_Folders:
-    - Packages
+    - Assets/Sample/CharacterModel
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
-    m_OriginalText: lilToon
+    m_OriginalText: 
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Packages
+  - Assets/Sample/CharacterModel
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\user\ChronosFall
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 64}
-    m_SelectedIDs: ffffff7f
-    m_LastClickedID: 2147483647
-    m_ExpandedIDs: 000000004ec40000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 54c40000
+    m_LastClickedID: 50260
+    m_ExpandedIDs: 0000000096c7000098c700009ac700009cc700009ec70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -506,7 +506,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004ec40000
+    m_ExpandedIDs: 0000000096c7000098c700009ac700009cc700009ec70000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -535,7 +535,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c62300006403010010c20000f2c30000
+    m_ExpandedInstanceIDs: c62300006403010010c20000f2c3000034b90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -654,7 +654,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 5ed0ffff6cd0ffff76d0ffff20e1ffff1efbffff20fbfffffab60000feb60000
+      m_ExpandedIDs: 20fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1244,9 +1244,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 33.362133, y: 2.578141, z: 281.56088}
+    m_Target: {x: 33.916622, y: 2.2208924, z: 281.3242}
     speed: 2
-    m_Value: {x: 33.362133, y: 2.578141, z: 281.56088}
+    m_Value: {x: 33.916622, y: 2.2208924, z: 281.3242}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 2
@@ -1292,13 +1292,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.3975948, y: 0.0041290023, z: -0.0017891893, w: 0.9175504}
+    m_Target: {x: 0.32293394, y: -0.13564788, z: 0.046826582, w: 0.9354792}
     speed: 2
-    m_Value: {x: -0.3975948, y: -0.0041290023, z: 0.0017891893, w: -0.91755044}
+    m_Value: {x: -0.3229339, y: 0.13564788, z: -0.04682658, w: -0.93547916}
   m_Size:
-    m_Target: 0.8341722
+    m_Target: 2.8349583
     speed: 2
-    m_Value: 0.8341722
+    m_Value: 2.8349583
   m_Ortho:
     m_Target: 0
     speed: 2
